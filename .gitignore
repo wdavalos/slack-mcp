@@ -1,0 +1,9 @@
+node_modules/
+*.tsbuildinfo
+dist/*.map
+dist/*.d.ts
+.env
+.venv/
+storage/
+apify_storage/
+crawlee_storage/

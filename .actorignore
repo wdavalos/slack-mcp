@@ -1,0 +1,9 @@
+node_modules/
+.npm/
+.npmrc
+*.tsbuildinfo
+dist/*.map
+dist/*.d.ts
+.env
+.dockerignore
+.gitignore

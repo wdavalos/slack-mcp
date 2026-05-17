@@ -1,0 +1,24 @@
+{
+  "title": "Slack MCP Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tool": {
+      "title": "Tool",
+      "type": "string",
+      "description": "Slack tool name to call (e.g., conversations_list, messages_post_message)",
+      "default": "conversations_list",
+      "prefill": "conversations_list",
+      "editor": "textfield"
+    },
+    "params": {
+      "title": "Parameters",
+      "type": "object",
+      "description": "Tool arguments as key-value pairs",
+      "default": {},
+      "prefill": {},
+      "editor": "json"
+    }
+  },
+  "required": ["tool"]
+}

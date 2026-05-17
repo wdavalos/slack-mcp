@@ -1,0 +1,50 @@
+{
+  "$schema": "https://apify.com/schemas/v1/actor.json",
+  "actorSpecification": 1,
+  "name": "slack-mcp",
+  "title": "Slack MCP Actor",
+  "version": "1.0",
+  "description": "Slack MCP for AI agents — 66 tools for messaging, channels, users, files, and analytics. Wraps the Slack PP CLI as a standby MCP server.",
+  "buildTag": "latest",
+  "usesStandbyMode": true,
+  "meta": {
+    "templateId": "ts-standby",
+    "generatedBy": "apify-cli"
+  },
+  "dockerfile": "../Dockerfile",
+  "webServerMcpPath": "/mcp",
+  "defaultRunOptions": {
+    "build": "latest",
+    "memoryMbytes": 1024,
+    "timeoutSecs": 3600
+  },
+  "input": {
+    "title": "Input schema",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "tool": {
+        "title": "Tool",
+        "type": "string",
+        "description": "Slack tool name to call",
+        "default": "conversations_list",
+        "prefill": "conversations_list",
+        "editor": "textfield"
+      },
+      "params": {
+        "title": "Parameters",
+        "type": "object",
+        "description": "Tool arguments",
+        "default": {},
+        "prefill": {},
+        "editor": "json"
+      }
+    },
+    "required": ["tool"]
+  },
+  "envSecrets": ["SLACK_BOT_TOKEN"],
+  "pricing": {
+    "model": "PAY_PER_EVENT"
+  },
+  "categories": ["MCP_SERVERS", "AI"]
+}
